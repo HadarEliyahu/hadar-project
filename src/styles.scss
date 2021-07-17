@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+html
+{
+  font-family: sans-serif;
+}
+
+
+button
+{
+  border: 0;
+  padding: 5px 10px;
+  background-color: #4845fd;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  margin-right: 5px;
+
+  &:hover
+  {
+    background-color: #2f2cd3;
+  }
+
+  &:disabled
+  {
+    background-color: rgba(88, 85, 255, 0.233);
+    cursor: not-allowed;
+  }
+}
+
+input, textarea
+{
+  height: 15px;
+  resize: none;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #4845fd;
+  font-weight: 600;
+  outline: none;
+  cursor: text;
+
+
+  &:hover
+  {
+    border-bottom-color: #2f2cd3;
+  }
+}

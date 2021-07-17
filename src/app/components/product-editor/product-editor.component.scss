@@ -1,0 +1,17 @@
+.container
+{
+  background-color: #ececec;
+  padding: 30px;
+  box-shadow: 2px 2px 8px 5px lightgray;
+
+  .form
+  {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-row-gap: 30px;
+
+  }
+
+  width: 75%;
+  margin: 0 auto;
+}

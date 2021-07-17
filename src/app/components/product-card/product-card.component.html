@@ -1,0 +1,11 @@
+<diV class="continaer">
+  <img src="/assets/MAC.jpg">
+  <div class="details">
+    <span class="name">{{ product.Name }}</span>
+    <span class="price">{{ product.Price }}$</span>
+    <span class="description">{{ product.Description }}</span>
+    <span class="date">{{ product.CreationDate | date :'dd/MM/yyyy' }}</span>
+  </div>
+  <button (click)="delete()" class="delete">X</button>
+
+</diV>

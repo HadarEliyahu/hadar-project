@@ -1,0 +1,19 @@
+
+<div class="container">
+  <h3 *ngIf="product.id; else new">Edit {{ product.Name }}</h3>
+  <ng-template #new>
+    <h3>Create new product</h3>
+  </ng-template>
+  <div [formGroup]="productForm" class="form">
+    <label for="Name">Name: </label> <input id="Name" type="text" formControlName="Name">
+    <label for="Description">Description:</label><textarea formControlName="Description"></textarea>
+    <label for="Price">Price:</label> <input type="text" formControlName="Price">
+    <label for="CreationDate">Creation Date:</label> <input type="date" formControlName="CreationDate">
+
+
+  </div>
+  <br>
+  <button (click)="save()" [disabled]="productForm.valid? '' :'disabled'">Save</button>
+  <button (click)="cancel()">Cancel</button>
+
+</div>

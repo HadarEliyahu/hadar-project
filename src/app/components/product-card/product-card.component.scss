@@ -1,0 +1,77 @@
+.continaer
+{
+  background: #ececec;
+  box-shadow: 2px 2px 8px 5px lightgray;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  display: grid;
+
+  column-gap: 2rem;
+  grid-template-columns: 1fr 5fr 1fr;
+  position: relative;
+
+  img
+  {
+    width: 100%;
+    height: 100%;
+  }
+
+  .details
+  {
+    display: grid;
+
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "name price"
+                         "desc date";
+
+    span
+    {
+      padding: 8px;
+    }
+    .name
+    {
+      grid-template: "name";
+      font-size: 18pt;
+      font-weight: bold;
+    }
+
+    .description
+    {
+      grid-template: "desc";
+      font-size: 11pt;
+      color: gray;
+    }
+
+    .price
+    {
+      grid-template: "price";
+      font-size: 16pt;
+      font-weight: 400;
+    }
+
+    .date
+    {
+      grid-template: "date";
+      font-size: 11pt;
+    }
+  }
+
+  .delete
+  {
+    background-color: #fa6565;
+    color: black;
+    font-weight: bold;
+    padding: 5px 8px;
+    right: 10px;
+    top: 10px;
+    position: absolute;
+    border-radius: 10px;
+
+    &:hover
+    {
+      background-color: red;
+    }
+  }
+}
