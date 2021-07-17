@@ -14,12 +14,16 @@ export class HomeComponent implements OnInit {
 
   public products: Array<Product> = [];
 
+  public filtered: Array<Product> = [];
+
+  public filter: string = "";
 
   public currentEdit: any = null;
 
   ngOnInit(): void {
     this.ps.getAll().subscribe((products) => {
       this.products = products;
+      this.filtered = this.products;
     });
 
     this.router.params.subscribe((params) => {
@@ -42,4 +46,12 @@ export class HomeComponent implements OnInit {
   {
     this.currentEdit = product;
   }
+
+  filterProducts()
+  {
+      if(this.filter != "")
+        this.filtered = this.products.filter((o) => {return o.Name.includes(this.filter) || o.Description.includes(this.filter)})
+      else this.filtered = this.products
+  }
+
 }
