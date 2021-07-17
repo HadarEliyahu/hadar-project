@@ -11,4 +11,10 @@
     display: grid;
     grid-template-columns: 1fr;
   }
+
+  .editor
+  {
+    height: 200px;
+    max-height: 200px;
+  }
 }

@@ -30,6 +30,11 @@ export class ProductsService {
     return this.productsObvserver.asObservable();
   }
 
+  get(id: number)
+  {
+    return this.products.find((o => { return o.id == id }))
+  }
+
   add(product: Product)
   {
     debugger

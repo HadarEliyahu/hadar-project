@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/models/Product';
 import { ProductsService } from 'src/app/services/products.service';
 
@@ -9,7 +10,7 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public ps: ProductsService) { }
+  constructor(public ps: ProductsService, private router: ActivatedRoute) { }
 
   public products: Array<Product> = [];
 
@@ -20,6 +21,11 @@ export class HomeComponent implements OnInit {
     this.ps.getAll().subscribe((products) => {
       this.products = products;
     });
+
+    this.router.params.subscribe((params) => {
+      this.currentEdit = this.ps.get(params['id']);
+
+  });
   }
 
   addNew()
